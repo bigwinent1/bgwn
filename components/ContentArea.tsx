@@ -16,6 +16,8 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
     TabOption.ABOUTIME,
     TabOption.RWYA,
     TabOption.GOLDN_MNKY,
+    TabOption.JOVE,
+    TabOption.KATLYST,
     TabOption.POSER,
   ];
 
@@ -228,6 +230,28 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
                 </div>
                 <h3 className="text-xl font-bold text-black group-hover:text-gray-600 transition-colors">POSER</h3>
                 <p className="text-gray-600 text-sm">Demos • 2024</p>
+              </div>
+
+              {/* JOVE Album Card */}
+              <div onClick={() => onTabChange(TabOption.JOVE)} 
+              className="cursor-default group transition-transform duration-300 hover:scale-105">
+                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
+                  <img src="/assets/jove.jpg" alt="JOVE cover art" className="w-full h-full object-cover" />
+                </div>
+                <h3 className="text-xl font-bold text-black group-hover:text-indigo-700 transition-colors">JOVE</h3>
+                <p className="text-gray-600 text-sm">2025</p>
+              </div>
+
+              {/* KATLYST Album Card */}
+              <div
+                onClick={() => onTabChange(TabOption.KATLYST)}
+                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
+              >
+                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
+                  <img src="/assets/KATLYST-cover-2024.png" alt="KATLYST cover art" className="w-full h-full object-cover" />
+                </div>
+                <h3 className="text-xl font-bold text-black group-hover:text-purple-600 transition-colors">KATLYST</h3>
+                <p className="text-gray-600 text-sm">2024</p>
               </div>
             </div>
           </div>
@@ -621,14 +645,14 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
             <div className="flex-grow p-8">
               <h2 className="text-4xl font-bold text-black mb-6 align-left">POSER</h2>
 
-              <div className="flex flex-col md:flex-row items-start md:items-stretch gap-8">
-                <div className="w-full md:w-1/2 flex items-center justify-center">
+              <div className="items-start md:items-stretch gap-8">
+                <div className="w-full flex items-center justify-center">
                   <div className="relative w-full max-w-md aspect-square shadow-2xl overflow-hidden rounded-lg">
                     <img src="/assets/poser.jpg" alt="POSER cover art" className="w-full h-full object-cover" />
                   </div>
                 </div>
 
-                <div className="w-full md:w-1/2">
+                <div className="w-full">
                   <div className="mb-6">
                     <iframe
                       title="SoundCloud - POSER (demos)"
@@ -645,6 +669,92 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
                       <a href="https://soundcloud.com/invasivemastermind" title="invasivemastermind" target="_blank" rel="noreferrer" style={{ color: '#cccccc', textDecoration: 'none' }}>invasivemastermind</a>
                       {' '}·{' '}
                       <a href="https://soundcloud.com/invasivemastermind/sets/poser" title="POSER (demos)" target="_blank" rel="noreferrer" style={{ color: '#cccccc', textDecoration: 'none' }}>POSER (demos)</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-full mt-6">
+              <div className="">
+                <img src="/assets/poserCover_2.jpg" alt="POSER cover 2" className="w-full object-cover rounded-md shadow-md" />
+                <img src="/assets/poser_lyrics_cover.jpg" alt="POSER lyrics cover" className="w-full object-cover rounded-md shadow-md" />
+                <img src="/assets/poser_tracklist_cover.jpg" alt="POSER tracklist cover" className="w-full object-cover rounded-md shadow-md" />
+              </div>
+            </div>
+          </>
+        );
+
+      case TabOption.JOVE:
+        return (
+          <>
+            <div className="flex-grow p-8">
+              <h2 className="text-4xl font-bold text-black mb-6 align-left">JOVE</h2>
+
+              <div className="items-start md:items-stretch gap-8">
+                <div className="w-full flex items-center justify-center">
+                  <div className="relative w-full max-w-md aspect-square shadow-2xl overflow-hidden rounded-lg">
+                    <img src="/assets/jove.jpg" alt="JOVE cover art" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+
+                <div className="w-full">
+                  <div className="mb-6">
+                    <iframe
+                      title="SoundCloud - JOVE"
+                      width="100%"
+                      height={450}
+                      scrolling="no"
+                      frameBorder="no"
+                      allow="autoplay"
+                      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A1975482181&color=%23f2f2f2&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+                      className="w-full rounded-lg overflow-hidden"
+                    />
+
+                    <div style={{ fontSize: 10, color: '#cccccc', lineBreak: 'anywhere', wordBreak: 'normal', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis', fontFamily: 'Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif', fontWeight: 100 }}>
+                      <a href="https://soundcloud.com/invasivemastermind" title="invasivemastermind" target="_blank" rel="noreferrer" style={{ color: '#cccccc', textDecoration: 'none' }}>invasivemastermind</a>
+                      {' '}·{' '}
+                      <a href="https://soundcloud.com/invasivemastermind/sets/jove" title="JOVE" target="_blank" rel="noreferrer" style={{ color: '#cccccc', textDecoration: 'none' }}>JOVE</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        );
+
+      case TabOption.KATLYST:
+        return (
+          <>
+            <div className="flex-grow p-8">
+              <h2 className="text-4xl font-bold text-black mb-6 align-left">KATLYST</h2>
+
+              <div className="items-start md:items-stretch gap-8">
+                <div className="w-full items-center justify-center">
+                  <div className="relative w-full aspect-square shadow-2xl overflow-hidden rounded-lg">
+                    <img src="/assets/KATLYST-cover-2024.png" alt="KATLYST cover art" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="relative w-full aspect-square shadow-2xl overflow-hidden rounded-lg">
+                    <img src="/assets/KATLYST-back-2024.png" alt="KATLYST cover art" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+
+                <div className="w-full">
+                  <div className="mb-6">
+                    <iframe
+                      title="SoundCloud - KATLYST"
+                      width="100%"
+                      height={450}
+                      scrolling="no"
+                      frameBorder="no"
+                      allow="autoplay"
+                      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A1869516593&color=%23f2f2f2&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+                      className="w-full rounded-lg overflow-hidden"
+                    />
+
+                    <div style={{ fontSize: 10, color: '#cccccc', lineBreak: 'anywhere', wordBreak: 'normal', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis', fontFamily: 'Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif', fontWeight: 100 }}>
+                      <a href="https://soundcloud.com/invasivemastermind" title="invasivemastermind" target="_blank" rel="noreferrer" style={{ color: '#cccccc', textDecoration: 'none' }}>invasivemastermind</a>
+                      {' '}·{' '}
+                      <a href="https://soundcloud.com/invasivemastermind/sets/katlyst" title="KATLYST" target="_blank" rel="noreferrer" style={{ color: '#cccccc', textDecoration: 'none' }}>KATLYST</a>
                     </div>
                   </div>
                 </div>

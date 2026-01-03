@@ -31,6 +31,8 @@ export enum TabOption {
   ABOUTIME = 'ABOUTIME',
   RWYA = 'RWYA',
   GOLDN_MNKY = 'Goldn Mnky',
+  JOVE = 'JOVE',
+  KATLYST = 'Katlyst',
   POSER = 'POSER',
   INSTRUMENTALS = 'Instrumentals',
   SUPPORT_ARTISTS = 'Support - Artists',

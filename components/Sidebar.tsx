@@ -212,6 +212,18 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
               logoText="READY WHEN"
               onClick={() => handleNavigation(TabOption.RWYA)}
             />
+            <ArtistCard
+              name="JOVE"
+              color="bg-indigo-700"
+              logoText="JOVE"
+              onClick={() => handleNavigation(TabOption.JOVE)}
+            />
+            <ArtistCard
+              name="KATLYST"
+              color="bg-purple-600"
+              logoText="KATLYST"
+              onClick={() => handleNavigation(TabOption.KATLYST)}
+            />
           </div>
         </div>
       </div>
