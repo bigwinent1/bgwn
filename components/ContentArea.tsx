@@ -18,6 +18,8 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
     TabOption.GOLDN_MNKY,
     TabOption.JOVE,
     TabOption.KATLYST,
+    TabOption.DISTORTED,
+    TabOption.MR_SQUARE,
     TabOption.POSER,
   ];
 
@@ -91,25 +93,11 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
               <h2 className="text-4xl font-bold tracking-tight border-b border-white/20 pb-4">About Us</h2>
               <div className="prose prose-invert prose-lg">
                 <p className="text-xl leading-relaxed">
-                  bgwn is a philosophy. be great with nothing. <br />
-                  10 years I've
+                  bgwn is a philosophy. be great with nothing.
                 </p>
                 <p className="text-black">
-                  Founded in 2024, our mission is to provide a platform where creativity knows no bounds. We believe in the power of raw expression and the community that builds around it. From bedroom demos to studio masterpieces, we support the journey.
+                  bgwn. est 2016. invasive mastermind says be.great.with.nothing
                 </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-                <div className="bg-black/30 p-6 rounded-lg border border-white/10">
-                  <Users className="w-8 h-8 mb-4 text-blue-400" />
-                  <h3 className="text-xl font-bold mb-2">Community First</h3>
-                  <p className="text-sm text-gray-400">We prioritize the artists and the listeners, creating a symbiotic ecosystem.</p>
-                </div>
-                <div className="bg-black/30 p-6 rounded-lg border border-white/10">
-                  <Disc className="w-8 h-8 mb-4 text-red-400" />
-                  <h3 className="text-xl font-bold mb-2">Analog Soul</h3>
-                  <p className="text-sm text-gray-400">In a digital world, we maintain the warmth and grit of analog production.</p>
-                </div>
               </div>
             </div>
           </div>
@@ -251,6 +239,30 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
                   <img src="/assets/KATLYST-cover-2024.png" alt="KATLYST cover art" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-xl font-bold text-black group-hover:text-purple-600 transition-colors">KATLYST</h3>
+                <p className="text-gray-600 text-sm">2024</p>
+              </div>
+
+              {/* DISTORTED Album Card */}
+              <div
+                onClick={() => onTabChange(TabOption.DISTORTED)}
+                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
+              >
+                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
+                  <img src="/assets/DISTORTED.jpg" alt="DISTORTED cover art" className="w-full h-full object-cover" />
+                </div>
+                <h3 className="text-xl font-bold text-black group-hover:text-orange-600 transition-colors">DISTORTED</h3>
+                <p className="text-gray-600 text-sm">2024</p>
+              </div>
+
+              {/* MR_SQUARE Album Card */}
+              <div
+                onClick={() => onTabChange(TabOption.MR_SQUARE)}
+                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
+              >
+                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
+                  <img src="/assets/mrsquare.jpg" alt="Mr. SQUARE (demos) cover art" className="w-full h-full object-cover" />
+                </div>
+                <h3 className="text-xl font-bold text-black group-hover:text-green-600 transition-colors">Mr. SQUARE (demos)</h3>
                 <p className="text-gray-600 text-sm">2024</p>
               </div>
             </div>
@@ -684,6 +696,62 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
           </>
         );
 
+      case TabOption.DISTORTED:
+        return (
+          <>
+            <div className="flex-grow p-8">
+              <h2 className="text-4xl font-bold text-black mb-6 align-left">DISTORTED</h2>
+
+              <div className="items-start md:items-stretch gap-8">
+                <div className="w-full flex items-center justify-center">
+                  <div className="relative w-full max-w-md aspect-square shadow-2xl overflow-hidden rounded-lg">
+                    <img src="/assets/DISTORTED.jpg" alt="DISTORTED cover art" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+
+                <div className="w-full">
+                  <div className="mb-6">
+                    <iframe
+                      width="560"
+                      height="315"
+                      src="https://www.youtube.com/embed/videoseries?si=vyB_aRubHk4loz98&amp;list=PLrQYSJJvV-zxK34X_qHmgEvZt8mzoeZES"
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                      className="w-full rounded-lg"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        );
+
+      case TabOption.MR_SQUARE:
+        return (
+          <>
+            <div className="flex-grow p-8">
+              <h2 className="text-4xl font-bold text-black mb-6 align-left">Mr. SQUARE (demos)</h2>
+
+              <div className="items-start md:items-stretch gap-8">
+                <div className="w-full flex items-center justify-center">
+                  <div className="relative w-full max-w-md aspect-square shadow-2xl overflow-hidden rounded-lg">
+                    <img src="/assets/mrsquare.jpg" alt="Mr. SQUARE (demos) cover art" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+
+                <div className="w-full">
+                  <div className="mb-6">
+                    <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A1972117716&color=%23f2f2f2&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/invasivemastermind" title="invasivemastermind" target="_blank" style="color: #cccccc; text-decoration: none;">invasivemastermind</a> · <a href="https://soundcloud.com/invasivemastermind/sets/mr-square" title="Mr. Square (demos)" target="_blank" style="color: #cccccc; text-decoration: none;">Mr. Square (demos)</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        );
+
       case TabOption.JOVE:
         return (
           <>
@@ -850,6 +918,81 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
               {/* Album Art - ARIZONA.jpg */}
               <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] overflow-hidden rounded-lg">
                 <img src="/assets/ARIZONA.jpg" alt="ARIZONA cover art" className="w-full h-full object-cover" />
+              </div>
+
+              <div className="w-full max-w-4xl">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/Z4MKUmQBmdg?si=QhGLNcFdWpU_JF1V"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    className="w-full rounded-lg"
+                  ></iframe>
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/zW-GKvrV24o?si=-hxNj7Vxdurklhim"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    className="w-full rounded-lg"
+                  ></iframe>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/DzobFRsrfPQ?si=A8EcW4DWKUgizsHd"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    className="w-full rounded-lg"
+                  ></iframe>
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/OK6x30Oi-Mk?si=8HfxUNoSUT2JfbLV"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    className="w-full rounded-lg"
+                  ></iframe>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/wUFlEPu1dJU?si=BeQ3SmtdhdAdOXcT"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    className="w-full rounded-lg"
+                  ></iframe>
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/t24oF7ch8s0?si=xNq_imjiVHq-s_-y"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    className="w-full rounded-lg"
+                  ></iframe>
+                </div>
               </div>
             </div>
           </>

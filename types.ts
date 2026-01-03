@@ -33,6 +33,8 @@ export enum TabOption {
   GOLDN_MNKY = 'Goldn Mnky',
   JOVE = 'JOVE',
   KATLYST = 'Katlyst',
+  DISTORTED = 'DISTORTED',
+  MR_SQUARE = 'Mr. SQUARE (demos)',
   POSER = 'POSER',
   INSTRUMENTALS = 'Instrumentals',
   SUPPORT_ARTISTS = 'Support - Artists',
