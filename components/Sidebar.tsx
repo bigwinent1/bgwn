@@ -43,9 +43,9 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
       <button
         onClick={() => setIsOpen((v) => !v)}
         aria-label="Toggle sidebar"
-        className="fixed top-4 left-4 z-60 p-2 bg-black/90 rounded-md border border-white/10 hover:bg-black transition"
+        className="fixed top-4 left-4 z-60 p-0 rounded-md hover:bg-black transition"
       >
-        <img src="/assets/bgwn_jove.png" alt="bgwn jove logo (transparent)" className="w-9 h-9 object-contain bg-transparent" />
+        <img src="/assets/bgwn_jove.png" alt="bgwn jove logo (transparent)" className="w-[6.75rem] h-[6.75rem] object-contain bg-transparent" />
       </button>
 
       {/* Overlay shown when sidebar is open */}
