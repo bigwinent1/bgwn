@@ -18,7 +18,7 @@ function App() {
       }}
     >
       {/* Sidebar - Fixed width, sticky functionality handling internal scroll */}
-      <aside className="flex-shrink-0 z-30 shadow-2xl hidden md:block">
+      <aside className="flex-shrink-0 z-30 shadow-2xl">
         <Sidebar activeTab={activeTab} onTabChange={setActiveTab} />
       </aside>
 
@@ -27,7 +27,7 @@ function App() {
 
         {/* Top Bar Area */}
         <div className="w-full pt-8 px-8 md:px-12 z-20">
-             <TopBar activeTab={activeTab} />
+             <TopBar activeTab={activeTab} onTabChange={setActiveTab} />
         </div>
 
         {/* Content Scrollable Area */}

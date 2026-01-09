@@ -4,19 +4,75 @@ import { TabOption } from '../types';
 
 interface TopBarProps {
   activeTab: TabOption;
+  onTabChange: (tab: TabOption) => void;
 }
 
-const TopBar: React.FC<TopBarProps> = ({ activeTab }) => {
+const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange }) => {
+  const musicTabs = [
+    TabOption.CATCH22,
+    TabOption.ARIZONA,
+    TabOption.ABOUTIME,
+    TabOption.RWYA,
+    TabOption.GOLDN_MNKY,
+    TabOption.JOVE,
+    TabOption.KATLYST,
+    TabOption.DISTORTED,
+    TabOption.MR_SQUARE,
+    TabOption.POSER,
+  ];
+
+  const showInternalTabs = musicTabs.includes(activeTab) || activeTab === TabOption.MUSIC;
+
   return (
-    <div className="w-full max-w-4xl mx-auto mb-8 bg-black rounded-sm shadow-lg text-gray-300 text-sm font-mono p-3 flex items-center space-x-2 z-20 relative">
-      <Lock className="w-3 h-3 text-gray-500" />
-      <span className="text-gray-500">bgwn.net</span>
-      <span className="text-gray-600">/</span>
-      <span className="text-gray-300 hover:text-white cursor-pointer">music</span>
-      <span className="text-gray-600">/</span>
-      {/* Avoid showing 'music / music' redundancy */}
-      <span className="text-white font-bold">{activeTab === TabOption.MUSIC ? '' : activeTab.toLowerCase()}</span>
-      <span className="text-gray-600">/</span>
+    <div className="w-full max-w-6xl mx-auto mb-6 bg-black/95 border border-white/5 rounded-md shadow-md text-gray-200 text-sm p-3 z-20 relative">
+      <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center space-x-2">
+          <Lock className="w-4 h-4 text-gray-400" />
+          <span className="text-gray-400 font-mono text-xs md:text-sm">bgwn.net</span>
+        </div>
+
+        <nav className="flex-1 flex items-center justify-center gap-3 flex-wrap">
+          {[
+            TabOption.HOME,
+            TabOption.MUSIC,
+            TabOption.BLOG,
+            TabOption.ABOUT,
+            TabOption.ARTIST,
+            TabOption.SHOWS,
+            TabOption.VISUALS,
+            TabOption.SUPPORT_ARTISTS,
+            TabOption.SUPPORT_BUSINESSES,
+          ].map((tab) => {
+            const isActive = activeTab === tab || (tab === TabOption.MUSIC && musicTabs.includes(activeTab));
+            return (
+              <button
+                key={tab}
+                onClick={() => onTabChange(tab)}
+                className={`px-3 py-1 rounded-sm text-sm font-semibold tracking-wide transition-colors duration-150 ${isActive ? 'bg-white text-black shadow-sm border-b-2 border-blue-500' : 'text-gray-300 hover:text-white'}`}
+                aria-current={isActive ? 'page' : undefined}
+              >
+                {tab}
+              </button>
+            );
+          })}
+        </nav>
+
+        <div className="w-16 text-right text-xs text-gray-400 hidden md:block">bgwn</div>
+      </div>
+
+      {showInternalTabs && (
+        <div className="mt-2 flex gap-2 items-center justify-center flex-wrap">
+          {musicTabs.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => onTabChange(tab)}
+              className={`px-2 py-0.5 rounded-full text-xs font-medium transition-all duration-150 ${activeTab === tab ? 'bg-blue-600 text-white shadow' : 'bg-white/5 text-gray-200 hover:bg-white/10'}`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

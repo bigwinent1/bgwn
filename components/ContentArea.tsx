@@ -22,8 +22,6 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
     TabOption.MR_SQUARE,
     TabOption.POSER,
   ];
-
-  const showInternalTabs = musicTabs.includes(activeTab);
   const [isLogoAnimating, setIsLogoAnimating] = useState(false);
 
   const handleLogoClick = () => {
@@ -1008,72 +1006,14 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
   return (
     <div className="relative w-full h-full p-8 md:p-12 overflow-y-auto no-scrollbar">
 
-      {/* Hanging Merchandise (Absolute Positioned) */}
-      <div className="absolute top-0 right-10 flex -space-x-4 z-10 pointer-events-none transform -translate-y-4 hidden md:flex">
-        <div className="transform rotate-3 origin-top hover:rotate-6 transition-transform duration-500">
-          <img src="https://picsum.photos/100/120?random=1" className="w-20 rounded-b-lg shadow-lg opacity-90 mask-image-hoodie" style={{ clipPath: "polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)" }} alt="Hoodie 1" />
-        </div>
-        <div className="transform -rotate-2 origin-top hover:-rotate-6 transition-transform duration-500 z-20">
-          <div className="w-24 h-32 bg-black rounded-b-xl shadow-2xl flex items-center justify-center text-black text-[10px] font-bold">
-            MERCH
-          </div>
-        </div>
-        <div className="transform rotate-1 origin-top hover:rotate-3 transition-transform duration-500">
-          <div className="w-20 h-28 bg-blue-300 rounded-b-xl shadow-lg"></div>
-        </div>
-      </div>
+      {/* Hanging Merchandise (hidden) */}
+      <div className="hidden" />
 
-      <div className="max-w-4xl mx-auto relative z-0 min-h-full flex flex-col">
+      <div className="max-w-6xl mx-auto relative z-0 min-h-full flex flex-col">
         {/* Main Card */}
         <div className="bg-[#999478]/80 backdrop-blur-sm rounded-lg shadow-xl border border-[#8a856a] overflow-hidden min-h-[800px] flex flex-col transition-all duration-300">
 
-          {/* Top Navigation Bar (global for ContentArea) */}
-          <div className="px-6 pt-6">
-            <nav className="flex flex-wrap gap-2 items-center">
-              {[
-                TabOption.HOME,
-                TabOption.MUSIC,
-                TabOption.BLOG,
-                TabOption.ABOUT,
-                TabOption.ARTIST,
-                TabOption.SHOWS,
-                TabOption.VISUALS,
-                TabOption.SUPPORT_ARTISTS,
-                TabOption.SUPPORT_BUSINESSES,
-              ].map((tab) => {
-                const isActive = activeTab === tab || (tab === TabOption.MUSIC && musicTabs.includes(activeTab));
-                return (
-                  <button
-                    key={tab}
-                    onClick={() => onTabChange(tab)}
-                    className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${isActive ? 'bg-black text-white shadow' : 'bg-black/0 text-black/70 hover:text-black'
-                      }`}
-                    aria-current={isActive ? 'page' : undefined}
-                  >
-                    {tab}
-                  </button>
-                );
-              })}
-            </nav>
-          </div>
 
-          {/* Music Sub-Tabs - Only visible if we are in a music-related context */}
-          {showInternalTabs && (
-            <div className="p-6 flex flex-wrap gap-2 border-b border-black/5 bg-black/5">
-              {musicTabs.map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => onTabChange(tab)}
-                  className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${activeTab === tab
-                      ? 'bg-blue-600 text-white shadow-md'
-                      : 'bg-black/60 text-white hover:bg-black/80'
-                    }`}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
-          )}
 
           {/* Content Body */}
           {renderContent()}
