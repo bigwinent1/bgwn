@@ -14,7 +14,6 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
     TabOption.CATCH22,
     TabOption.ARIZONA,
     TabOption.ABOUTIME,
-    TabOption.RWYA,
     TabOption.GOLDN_MNKY,
     TabOption.JOVE,
     TabOption.KATLYST,
@@ -182,18 +181,6 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
                 <p className="text-gray-600 text-sm">Lo-Fi Sessions • 2024</p>
               </div>
 
-              {/* RWYA Album Card */}
-              <div
-                onClick={() => onTabChange(TabOption.RWYA)}
-                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
-                  <img src="/assets/rwya.jpg" alt="RWYA cover art" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-bold text-black group-hover:text-green-700 transition-colors">RWYA</h3>
-                <p className="text-gray-600 text-sm">Ready When You Are • 2024</p>
-              </div>
-
               {/* Goldn Mnky Album Card */}
               <div
                 onClick={() => onTabChange(TabOption.GOLDN_MNKY)}
@@ -299,10 +286,6 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
               }, {
                 name: 'ABOUTIME',
                 desc: 'Lo-Fi Beats',
-                donate: '#'
-              }, {
-                name: 'RWYA',
-                desc: 'Electronic / Ambient',
                 donate: '#'
               }].map((artist) => (
                 <div key={artist.name} className="bg-black/40 p-6 rounded-lg border border-white/5 flex flex-col">
@@ -893,17 +876,6 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
                     </iframe>
                   </div>
                 </div>
-              </div>
-            </div>
-          </>
-        );
-
-      case TabOption.RWYA:
-        return (
-          <>
-            <div className="flex-grow flex flex-col items-center justify-center p-8">
-              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] overflow-hidden rounded-lg">
-                <img src="/assets/rwya.jpg" alt="RWYA cover art" className="w-full h-full object-cover" />
               </div>
             </div>
           </>

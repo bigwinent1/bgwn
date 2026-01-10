@@ -94,12 +94,6 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
               logoText="ABOUTTIME"
               onClick={() => handleNavigation(TabOption.ABOUTIME)}
             />
-            <ArtistCard 
-              name="RWYA" 
-              color="bg-green-600" 
-              logoText="READY WHEN"
-              onClick={() => handleNavigation(TabOption.RWYA)}
-            />
             <ArtistCard
               name="JOVE"
               color="bg-indigo-700"

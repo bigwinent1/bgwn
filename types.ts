@@ -29,7 +29,6 @@ export enum TabOption {
   CATCH22 = 'Catch22',
   ARIZONA = 'Arizona',
   ABOUTIME = 'ABOUTIME',
-  RWYA = 'RWYA',
   GOLDN_MNKY = 'Goldn Mnky',
   JOVE = 'JOVE',
   KATLYST = 'Katlyst',

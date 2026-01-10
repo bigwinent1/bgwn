@@ -12,7 +12,6 @@ const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange }) => {
     TabOption.CATCH22,
     TabOption.ARIZONA,
     TabOption.ABOUTIME,
-    TabOption.RWYA,
     TabOption.GOLDN_MNKY,
     TabOption.JOVE,
     TabOption.KATLYST,
