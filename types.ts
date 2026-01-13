@@ -18,6 +18,15 @@ export interface ArtistCardProps {
   onClick?: () => void;
 }
 
+export interface Blog {
+  id: number;
+  title: string;
+  date: string;
+  author: string;
+  excerpt: string;
+  content: string;
+}
+
 export enum TabOption {
   HOME = 'Home',
   ABOUT = 'About Us',

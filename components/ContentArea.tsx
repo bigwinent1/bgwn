@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TabOption } from '../types';
+import { TabOption, Blog } from '../types';
 import { Share2, Play, Music, Disc, Calendar, MapPin, Users, Video, Headphones, ArrowRight } from 'lucide-react';
 import Footer from './Footer';
 
@@ -21,6 +21,58 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
     TabOption.MR_SQUARE,
     TabOption.POSER,
   ];
+
+  const blogs: Blog[] = [
+    {
+      id: 1,
+      title: 'Welcome to bgwn',
+      date: 'February 16, 2024',
+      author: 'bgwn records',
+      excerpt: 'Hello — welcome to bgwn. We started this label as a holistic coalition of artists...',
+      content: `Hello — welcome to bgwn. We started this label as a holistic coalition of artists, visual creators, and web makers who wanted a space to share work without the friction of over-polished industry structures. This blog will be our place to document releases, thoughts on production, and notes about the community we're building.
+
+Our Philosophy
+We believe in supporting creative risk, centering community, and keeping the means of distribution accessible. Expect album notes, DIY production tips, and behind-the-scenes captures from our visual team.
+
+What's Next
+In the coming weeks we'll publish release plans for CATCH22 and a short visual series from ARIZONA. If you're an artist or a small business who wants to collaborate, reach out via the Support pages in the sidebar.
+
+— bgwn`
+    },
+    {
+      id: 2,
+      title: 'Behind the Scenes: CATCH22 Production',
+      date: 'March 5, 2024',
+      author: 'CATCH22',
+      excerpt: 'Dive into the creative process behind our latest release...',
+      content: `Dive into the creative process behind our latest release. From initial concepts to final mixes, we share the journey of creating CATCH22's debut album.
+
+Recording Sessions
+The album was recorded over six intense weeks in our home studio. We experimented with vintage equipment and modern techniques to achieve a unique sound.
+
+Collaborations
+Working with local artists brought fresh perspectives to the project. Special thanks to our visual team for the stunning artwork.
+
+— CATCH22`
+    },
+    {
+      id: 3,
+      title: 'Visual Series: ARIZONA Landscapes',
+      date: 'March 20, 2024',
+      author: 'ARIZONA',
+      excerpt: 'A collection of visual stories capturing the essence of our music...',
+      content: `A collection of visual stories capturing the essence of our music. These images represent the emotional landscapes that inspired ARIZONA's sound.
+
+The Inspiration
+Each visual piece corresponds to a track from our upcoming EP, telling the story through imagery and motion.
+
+Behind the Lens
+Shot on location in various desert environments, these visuals capture the raw beauty and isolation that fuels our creativity.
+
+— ARIZONA`
+    }
+  ];
+
   const [isLogoAnimating, setIsLogoAnimating] = useState(false);
 
   const handleLogoClick = () => {
@@ -103,30 +155,24 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
       case TabOption.BLOG:
         return (
           <div className="p-8 md:p-12 text-black h-full overflow-y-auto">
-            <div className="max-w-3xl mx-auto space-y-8">
-              <h2 className="text-4xl font-bold tracking-tight border-b border-white/20 pb-4">Welcome to `bgwn`</h2>
-              <div className="text-sm text-gray-400">February 16, 2024 — bgwn records</div>
-
-              <div className="prose prose-invert prose-lg">
-                <p>
-                  Hello — welcome to bgwn. We started this label as a holistic coalition of artists, visual creators, and web makers who wanted a space
-                  to share work without the friction of over-polished industry structures. This blog will be our place to document releases, thoughts on
-                  production, and notes about the community we're building.
-                </p>
-
-                <h3>Our Philosophy</h3>
-                <p>
-                  We believe in supporting creative risk, centering community, and keeping the means of distribution accessible. Expect album notes,
-                  DIY production tips, and behind-the-scenes captures from our visual team.
-                </p>
-
-                <h3>What's Next</h3>
-                <p>
-                  In the coming weeks we'll publish release plans for <strong>CATCH22</strong> and a short visual series from ARIZONA. If you're an artist
-                  or a small business who wants to collaborate, reach out via the Support pages in the sidebar.
-                </p>
-
-                <p className="text-black">— bgwn</p>
+            <div className="max-w-4xl mx-auto space-y-8">
+              {/* Main Center Logo */}
+              <div className="flex justify-center mb-8">
+                <img
+                  src="/assets/nothing_fancy.png"
+                  alt="bgwn blog logo"
+                  className="w-full max-w-md mx-auto object-contain"
+                />
+              </div>
+              <h2 className="text-4xl font-bold tracking-tight border-b border-white/20 pb-4">Blog</h2>
+              <div className="space-y-6">
+                {blogs.map((blog) => (
+                  <div key={blog.id} className="bg-black/20 p-6 rounded-lg backdrop-blur-md border border-white/10 shadow-lg">
+                    <h3 className="text-2xl font-semibold mb-2">{blog.title}</h3>
+                    <div className="text-sm text-gray-400 mb-4">{blog.date} — {blog.author}</div>
+                    <p className="text-gray-200">{blog.excerpt}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -470,22 +516,22 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
                 }
               ]
                 .map((show, i) => (
-                  <div key={i} className="bg-black/40 hover:bg-black/60 p-6 rounded-lg flex flex-col md:flex-row md:items-center justify-between border border-white/5 transition-colors group">
+                  <div key={i} className="bg-slate-800/40 hover:bg-slate-700/60 p-6 rounded-lg flex flex-col md:flex-row md:items-center justify-between border border-slate-600/20 transition-colors group">
                     <div className="flex items-center mb-4 md:mb-0">
-                      <div className="bg-white text-black font-bold p-3 rounded text-center min-w-[70px] mr-6">
+                      <div className="bg-slate-200 text-slate-900 font-bold p-3 rounded text-center min-w-[70px] mr-6">
                         <div className="text-sm tracking-widest">{show.date.split(' ')[0]}</div>
                         <div className="text-2xl leading-none">{show.date.split(' ')[1]}</div>
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-white group-hover:text-blue-300 transition-colors">{show.venue}</h3>
-                        <div className="flex items-center text-gray-400 text-sm mt-1">
+                        <h3 className="text-xl font-bold text-slate-200 group-hover:text-blue-300 transition-colors">{show.venue}</h3>
+                        <div className="flex items-center text-black font-bold text-sm mt-1">
                           <MapPin className="w-3 h-3 mr-1" /> {show.city}
                         </div>
                       </div>
                     </div>
                     <div className="flex items-center justify-between md:justify-end w-full md:w-auto">
-                      <span className="text-sm font-bold text-black mr-6 bg-white/10 px-3 py-1 rounded-full">{show.university}</span>
-                      <button className="bg-white text-black text-sm font-bold px-4 py-2 rounded hover:bg-gray-200 transition-colors">
+                      <span className="text-sm font-bold text-slate-100 mr-6 bg-black px-3 py-1 rounded-full">{show.university}</span>
+                      <button className="bg-slate-200 text-slate-900 text-sm font-bold px-4 py-2 rounded hover:bg-slate-300 transition-colors">
                         TICKETS
                       </button>
                     </div>
@@ -516,9 +562,9 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
                   </div>
                 </div>
                 <h3 className="text-black font-bold text-lg leading-tight group-hover:text-blue-400 transition-colors">
-                  Visual Experiment No. 1
+                  LIFE
                 </h3>
-                <p className="text-black text-sm">Directed by bgwn visual team</p>
+                <p className="text-black text-sm">Directed by bgwn | Artist: SOLOMON</p>
               </div>
 
               {/* Visual tumbling_down */}
@@ -535,9 +581,9 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
                   </div>
                 </div>
                 <h3 className="text-black font-bold text-lg leading-tight group-hover:text-blue-400 transition-colors">
-                  Visual Experiment No. 2
+                  TUMBLING DOWN
                 </h3>
-                <p className="text-black text-sm">Directed by bgwn visual team</p>
+                <p className="text-black text-sm">Directed by bgwn | Artist: P9 the Hieroglyph</p>
               </div>
 
               {/* Visual cerebral_choir */}
@@ -554,9 +600,9 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
                   </div>
                 </div>
                 <h3 className="text-black font-bold text-lg leading-tight group-hover:text-blue-400 transition-colors">
-                  Visual Experiment No. 3
+                  CEREBRAL CHROIR
                 </h3>
-                <p className="text-black text-sm">Directed by bgwn visual team</p>
+                <p className="text-black text-sm">Directed by bgwn | Artist: invasive mastermind</p>
               </div>
 
               {/* Visual arrapin */}
@@ -575,7 +621,7 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
                 <h3 className="text-black font-bold text-lg leading-tight group-hover:text-blue-400 transition-colors">
                   Arrappin
                 </h3>
-                <p className="text-black text-sm">Directed by bgwn visual team</p>
+                <p className="text-black text-sm">Directed by bgwn | Artist: jarrellBrian</p>
               </div>
             </div>
           </div>
@@ -588,17 +634,6 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
               {/* Album Art - use actual cover image */}
               <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
                 <img src="/assets/catch22_cover_art.jpg" alt="CATCH22 cover art" className="w-full h-full object-cover" />
-                {/* Text Overlay */}
-                <div className="absolute bottom-4 left-4">
-                  <div className="border border-white/50 px-1 py-0.5 inline-block mb-1 bg-black/30">
-                    <span className="text-[10px] text-white font-bold tracking-tighter block leading-none">PARENTAL</span>
-                    <span className="text-[14px] text-white font-black tracking-tighter block leading-none">ADVISORY</span>
-                    <span className="text-[8px] text-white font-bold tracking-tighter block leading-none">EXPLICIT CONTENT</span>
-                  </div>
-                </div>
-                <div className="absolute bottom-8 right-8 text-white font-bold tracking-[0.3em] text-sm opacity-90">
-                  CATCH22
-                </div>
               </div>
             </div>
 
