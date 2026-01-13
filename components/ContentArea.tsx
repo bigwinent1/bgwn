@@ -164,7 +164,54 @@ Shot on location in various desert environments, these visuals capture the raw b
                   className="w-full max-w-md mx-auto object-contain"
                 />
               </div>
-              <h2 className="text-4xl font-bold tracking-tight border-b border-white/20 pb-4">Blog</h2>
+
+              {/* Podcast / Video Thumbnails Section */}
+              <div className="mt-8">
+                <h3 className="text-2xl font-bold mb-4 flex items-center">
+                  <Headphones className="mr-3 w-6 h-6" /> Podcast
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                  <a href="https://example.com/podcast/episode-1" target="_blank" rel="noreferrer" className="group">
+                    <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10 bg-black">
+                      <img src="/assets/podcast_thumb1.jpg" alt="Podcast Episode 1" className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
+                          <Play className="w-5 h-5 text-black" />
+                        </div>
+                      </div>
+                    </div>
+                    <h4 className="text-black font-bold mt-2">Episode 1 — Beginnings</h4>
+                    <p className="text-black text-sm">Host: bgwn</p>
+                  </a>
+
+                  <a href="https://example.com/podcast/episode-2" target="_blank" rel="noreferrer" className="group">
+                    <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10 bg-black">
+                      <img src="/assets/podcast_thumb2.jpg" alt="Podcast Episode 2" className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
+                          <Play className="w-5 h-5 text-black" />
+                        </div>
+                      </div>
+                    </div>
+                    <h4 className="text-black font-bold mt-2">Episode 2 — The Studio</h4>
+                    <p className="text-black text-sm">Guest: Invasive Mastermind</p>
+                  </a>
+
+                  <a href="https://example.com/podcast" target="_blank" rel="noreferrer" className="group">
+                    <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10 bg-black">
+                      <img src="/assets/podcast_thumb3.jpg" alt="Podcast Home" className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
+                          <Play className="w-5 h-5 text-black" />
+                        </div>
+                      </div>
+                    </div>
+                    <h4 className="text-black font-bold mt-2">Podcast Home</h4>
+                    <p className="text-black text-sm">Full archive</p>
+                  </a>
+                </div>
+              </div>
+
               <div className="space-y-6">
                 {blogs.map((blog) => (
                   <div key={blog.id} className="bg-black/20 p-6 rounded-lg backdrop-blur-md border border-white/10 shadow-lg">
@@ -174,6 +221,7 @@ Shot on location in various desert environments, these visuals capture the raw b
                   </div>
                 ))}
               </div>
+              
             </div>
           </div>
         );
