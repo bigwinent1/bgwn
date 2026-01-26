@@ -932,6 +932,34 @@ Shot on location in various desert environments, these visuals capture the raw b
                 <img src="/assets/quiet2_compressed.jpg" alt="QUIET cover art" className="w-full h-full object-cover" />
               </div>
             </div>
+
+            {/* YouTube Shorts Embeds */}
+            <div className="p-8">
+              <h3 className="text-2xl font-bold text-black mb-6 text-center">QUIET Videos</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  'UwZAqr96iFI',
+                  'vke_tD6RRjc',
+                  'rIDg7UKI6gc',
+                  'sGYcWEut3z0',
+                  't36mDxf_d5w',
+                  'Yw0tTUjsbhQ'
+                ].map((videoId) => (
+                  <div key={videoId} className="aspect-video">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src={`https://www.youtube.com/watch?v=${videoId}`}
+                      title={`QUIET Short ${videoId}`}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="rounded-lg"
+                    ></iframe>
+                  </div>
+                ))}
+              </div>
+            </div>
           </>
         );
 
