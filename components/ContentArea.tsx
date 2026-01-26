@@ -171,44 +171,29 @@ Shot on location in various desert environments, these visuals capture the raw b
                   <Headphones className="mr-3 w-6 h-6" /> Podcast
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                  <a href="https://example.com/podcast/episode-1" target="_blank" rel="noreferrer" className="group">
-                    <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10 bg-black">
-                      <img src="/assets/podcast_thumb1.jpg" alt="Podcast Episode 1" className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
-                          <Play className="w-5 h-5 text-black" />
-                        </div>
-                      </div>
+                  <div className="group">
+                    <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10 bg-black flex items-center justify-center">
+                      <span className="text-white text-lg font-bold">Coming Soon</span>
                     </div>
                     <h4 className="text-black font-bold mt-2">Episode 1 — Beginnings</h4>
                     <p className="text-black text-sm">Host: bgwn</p>
-                  </a>
+                  </div>
 
-                  <a href="https://example.com/podcast/episode-2" target="_blank" rel="noreferrer" className="group">
-                    <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10 bg-black">
-                      <img src="/assets/podcast_thumb2.jpg" alt="Podcast Episode 2" className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
-                          <Play className="w-5 h-5 text-black" />
-                        </div>
-                      </div>
+                  <div className="group">
+                    <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10 bg-black flex items-center justify-center">
+                      <span className="text-white text-lg font-bold">Coming Soon</span>
                     </div>
                     <h4 className="text-black font-bold mt-2">Episode 2 — The Studio</h4>
                     <p className="text-black text-sm">Guest: Invasive Mastermind</p>
-                  </a>
+                  </div>
 
-                  <a href="https://example.com/podcast" target="_blank" rel="noreferrer" className="group">
-                    <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10 bg-black">
-                      <img src="/assets/podcast_thumb3.jpg" alt="Podcast Home" className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
-                          <Play className="w-5 h-5 text-black" />
-                        </div>
-                      </div>
+                  <div className="group">
+                    <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10 bg-black flex items-center justify-center">
+                      <span className="text-white text-lg font-bold">Coming Soon</span>
                     </div>
                     <h4 className="text-black font-bold mt-2">Podcast Home</h4>
                     <p className="text-black text-sm">Full archive</p>
-                  </a>
+                  </div>
                 </div>
               </div>
 
@@ -343,6 +328,18 @@ Shot on location in various desert environments, these visuals capture the raw b
                 </div>
                 <h3 className="text-xl font-bold text-black group-hover:text-green-600 transition-colors">Mr. SQUARE (demos)</h3>
                 <p className="text-gray-600 text-sm">2024</p>
+              </div>
+
+              {/* TIX Album Card */}
+              <div
+                onClick={() => onTabChange(TabOption.TIX)}
+                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
+              >
+                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
+                  <img src="/assets/tix.jpg" alt="TIX cover art" className="w-full h-full object-cover" />
+                </div>
+                <h3 className="text-xl font-bold text-black group-hover:text-teal-600 transition-colors">TIX</h3>
+                <p className="text-gray-600 text-sm">2025</p>
               </div>
             </div>
           </div>
@@ -597,7 +594,7 @@ Shot on location in various desert environments, these visuals capture the raw b
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Visual life */}
-              <div className="group cursor-pointer">
+              <a href="https://www.youtube.com/watch?v=LBCJ9aErTrI" target="_blank" rel="noreferrer" className="group">
                 <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
                   <img src="./assets/life_thumbnail.jpg" alt="Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -605,18 +602,15 @@ Shot on location in various desert environments, these visuals capture the raw b
                       <Play className="w-5 h-5 fill-white text-black ml-1" />
                     </div>
                   </div>
-                  <div className="absolute bottom-2 right-2 bg-black/80 text-black text-[10px] px-2 py-0.5 rounded">
-                    02:04
-                  </div>
                 </div>
                 <h3 className="text-black font-bold text-lg leading-tight group-hover:text-blue-400 transition-colors">
                   LIFE
                 </h3>
                 <p className="text-black text-sm">Directed by bgwn | Artist: SOLOMON</p>
-              </div>
+              </a>
 
               {/* Visual tumbling_down */}
-              <div className="group cursor-pointer">
+              <a href="https://www.youtube.com/watch?v=phQMkiI7n5Y" target="_blank" rel="noreferrer" className="group">
                 <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
                   <img src="./assets/tumbling_down_thumbnail.jpg" alt="Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -624,18 +618,15 @@ Shot on location in various desert environments, these visuals capture the raw b
                       <Play className="w-5 h-5 fill-white text-black ml-1" />
                     </div>
                   </div>
-                  <div className="absolute bottom-2 right-2 bg-black/80 text-black text-[10px] px-2 py-0.5 rounded">
-                    02:42
-                  </div>
                 </div>
                 <h3 className="text-black font-bold text-lg leading-tight group-hover:text-blue-400 transition-colors">
                   TUMBLING DOWN
                 </h3>
                 <p className="text-black text-sm">Directed by bgwn | Artist: P9 the Hieroglyph</p>
-              </div>
+              </a>
 
               {/* Visual cerebral_choir */}
-              <div className="group cursor-pointer">
+              <a href="https://youtu.be/w3MuCDUIdAM" target="_blank" rel="noreferrer" className="group">
                 <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
                   <img src="./assets/cerebral_choir_thumbnail.jpg" alt="Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -643,18 +634,15 @@ Shot on location in various desert environments, these visuals capture the raw b
                       <Play className="w-5 h-5 fill-white text-black ml-1" />
                     </div>
                   </div>
-                  <div className="absolute bottom-2 right-2 bg-black/80 text-black text-[10px] px-2 py-0.5 rounded">
-                    03:42
-                  </div>
                 </div>
                 <h3 className="text-black font-bold text-lg leading-tight group-hover:text-blue-400 transition-colors">
                   CEREBRAL CHROIR
                 </h3>
                 <p className="text-black text-sm">Directed by bgwn | Artist: invasive mastermind</p>
-              </div>
+              </a>
 
               {/* Visual arrapin */}
-              <div className="group cursor-pointer">
+              <a href="https://youtu.be/j9TuI_OjqHg" target="_blank" rel="noreferrer" className="group">
                 <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
                   <img src="./assets/arrapin_thumbnail.jpg" alt="Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -662,15 +650,124 @@ Shot on location in various desert environments, these visuals capture the raw b
                       <Play className="w-5 h-5 fill-white text-black ml-1" />
                     </div>
                   </div>
-                  <div className="absolute bottom-2 right-2 bg-black/80 text-black text-[10px] px-2 py-0.5 rounded">
-                    02:04
-                  </div>
                 </div>
                 <h3 className="text-black font-bold text-lg leading-tight group-hover:text-blue-400 transition-colors">
                   Arrappin
                 </h3>
                 <p className="text-black text-sm">Directed by bgwn | Artist: jarrellBrian</p>
-              </div>
+              </a>
+
+              {/* Visual Triple War */}
+              <a href="https://www.youtube.com/watch?v=V5smnYz9GzQ" target="_blank" rel="noreferrer" className="group">
+                <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
+                  <img src="./assets/triple_war.jpg" alt="Triple War Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
+                      <Play className="w-5 h-5 fill-white text-black ml-1" />
+                    </div>
+                  </div>
+                </div>
+                <h3 className="text-black font-bold text-lg leading-tight group-hover:text-blue-400 transition-colors">
+                  TRIPLE WAR
+                </h3>
+                <p className="text-black text-sm">Directed by bgwn | Artist: Brutha War</p>
+              </a>
+
+              {/* Visual THE SOLUTION */}
+              <a href="https://www.youtube.com/watch?v=DLEuhAPLph0" target="_blank" rel="noreferrer" className="group">
+                <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
+                  <img src="./assets/the_solution.jpg" alt="THE SOLUTION Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
+                      <Play className="w-5 h-5 fill-white text-black ml-1" />
+                    </div>
+                  </div>
+                </div>
+                <h3 className="text-black font-bold text-lg leading-tight group-hover:text-blue-400 transition-colors">
+                  THE SOLUTION
+                </h3>
+                <p className="text-black text-sm">Directed by bgwn | Artist: Brutha War</p>
+              </a>
+
+              {/* Visual Life Lyric Video */}
+              <a href="https://www.youtube.com/watch?v=2_PDlsCy_FA" target="_blank" rel="noreferrer" className="group">
+                <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
+                  <img src="./assets/life_lyrics.jpg" alt="Life Lyric Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
+                      <Play className="w-5 h-5 fill-white text-black ml-1" />
+                    </div>
+                  </div>
+                </div>
+                <h3 className="text-black font-bold text-lg leading-tight group-hover:text-blue-400 transition-colors">
+                  Life [Lyric Video]
+                </h3>
+                <p className="text-black text-sm">Directed by bgwn | Artist: SOLOMON</p>
+              </a>
+
+              {/* Visual Dangerous */}
+              <a href="https://youtu.be/vQqadNE2hQc" target="_blank" rel="noreferrer" className="group">
+                <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
+                  <img src="./assets/dangerous_im.jpg" alt="Dangerous Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
+                      <Play className="w-5 h-5 fill-white text-black ml-1" />
+                    </div>
+                  </div>
+                </div>
+                <h3 className="text-black font-bold text-lg leading-tight group-hover:text-blue-400 transition-colors">
+                  Dangerous (from CATCH22)
+                </h3>
+                <p className="text-black text-sm">Directed by bgwn | Artist: invasive mastermind</p>
+              </a>
+
+              {/* Visual KEEP IT 100 */}
+              <a href="https://www.youtube.com/watch?v=iZwQiyIbMDw" target="_blank" rel="noreferrer" className="group">
+                <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
+                  <img src="./assets/keep_it_100.jpg" alt="KEEP IT 100 Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
+                      <Play className="w-5 h-5 fill-white text-black ml-1" />
+                    </div>
+                  </div>
+                </div>
+                <h3 className="text-black font-bold text-lg leading-tight group-hover:text-blue-400 transition-colors">
+                  KEEP IT 100
+                </h3>
+                <p className="text-black text-sm">Directed by bgwn | Artist: Brutha War</p>
+              </a>
+
+              {/* Visual We Inspire */}
+              <a href="https://www.youtube.com/watch?v=82dHMnXdm00" target="_blank" rel="noreferrer" className="group">
+                <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
+                  <img src="./assets/we_inspire.jpg" alt="We Inspire Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
+                      <Play className="w-5 h-5 fill-white text-black ml-1" />
+                    </div>
+                  </div>
+                </div>
+                <h3 className="text-black font-bold text-lg leading-tight group-hover:text-blue-400 transition-colors">
+                  We Inspire
+                </h3>
+                <p className="text-black text-sm">Directed by bgwn | Artist: CYBER ECHO</p>
+              </a>
+
+              {/* Visual One Day */}
+              <a href="https://www.youtube.com/watch?v=P6UUj7XnDlM" target="_blank" rel="noreferrer" className="group">
+                <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-3 border border-gray-800">
+                  <img src="./assets/one_day.jpg" alt="One Day Video Thumbnail" className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
+                      <Play className="w-5 h-5 fill-white text-black ml-1" />
+                    </div>
+                  </div>
+                </div>
+                <h3 className="text-black font-bold text-lg leading-tight group-hover:text-blue-400 transition-colors">
+                  One Day
+                </h3>
+                <p className="text-black text-sm">Directed by bgwn | Artist: CYBER ECHO</p>
+              </a>
             </div>
           </div>
         );
@@ -1052,6 +1149,20 @@ Shot on location in various desert environments, these visuals capture the raw b
         );
 
       case TabOption.INSTRUMENTALS:
+
+      case TabOption.TIX:
+        return (
+          <>
+            <div className="flex-grow flex flex-col items-center justify-center p-8">
+              {/* Album Art - use actual cover image */}
+              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
+                <img src="/assets/tix.jpg" alt="TIX cover art" className="w-full h-full object-cover" />
+              </div>
+
+              
+            </div>
+          </>
+        );
 
       default:
         return null;

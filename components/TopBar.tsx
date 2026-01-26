@@ -18,6 +18,7 @@ const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange }) => {
     TabOption.DISTORTED,
     TabOption.MR_SQUARE,
     TabOption.POSER,
+    TabOption.TIX,
   ];
 
   const showInternalTabs = musicTabs.includes(activeTab) || activeTab === TabOption.MUSIC;
