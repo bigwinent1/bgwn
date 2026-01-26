@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
        {/* Subtle decorative overlay to mimic the lighting in the design */}
        <div className="absolute top-0 right-0 w-2/3 h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 to-transparent pointer-events-none"></div>
 
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 font-sans tracking-wide items-center">
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-8 font-sans tracking-wide items-center">
              {/* Column 1: Bandcamp */}
              <div className="flex flex-col items-center">
                 <a href="https://byeblackboy.bandcamp.com/" target="_blank" rel="noreferrer" className="font-bold text-xl md:text-2xl uppercase tracking-wider border-b-[3px] border-yellow-500 pb-1 hover:text-yellow-200 transition-colors inline-block mb-2">
@@ -28,6 +28,13 @@ const Footer: React.FC = () => {
              <div className="flex flex-col items-center">
                 <a href="https://www.twitch.tv/bigwinent" target="_blank" rel="noreferrer" className="font-bold text-xl md:text-2xl uppercase tracking-wider border-b-[3px] border-yellow-500 pb-1 hover:text-yellow-200 transition-colors inline-block mb-2">
                    Twitch
+                </a>
+             </div>
+
+             {/* Column 4: Youtube */}
+             <div className="flex flex-col items-center">
+                <a href="https://www.youtube.com/@bigwinent" target="_blank" rel="noreferrer" className="font-bold text-xl md:text-2xl uppercase tracking-wider border-b-[3px] border-yellow-500 pb-1 hover:text-yellow-200 transition-colors inline-block mb-2">
+                   Youtube
                 </a>
              </div>
           </div>
