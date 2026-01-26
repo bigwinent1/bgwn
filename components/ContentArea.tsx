@@ -139,14 +139,29 @@ Shot on location in various desert environments, these visuals capture the raw b
         return (
           <div className="p-8 md:p-12 text-black h-full overflow-y-auto">
             <div className="max-w-2xl mx-auto space-y-8">
-              <h2 className="text-4xl font-bold tracking-tight border-b border-white/20 pb-4">About Us</h2>
-              <div className="prose prose-invert prose-lg">
-                <p className="text-xl leading-relaxed">
-                  bgwn is a philosophy. be great with nothing.
-                </p>
-                <p className="text-black">
-                  bgwn. est 2016. invasive mastermind says be.great.with.nothing
-                </p>
+              <div className="bg-black/20 p-10 md:p-14 rounded-xl backdrop-blur-md border border-white/10 shadow-2xl">
+                <h2 className="text-4xl font-bold tracking-tight border-b border-white/20 pb-4 mb-6">About Us</h2>
+                <div className="prose prose-invert prose-lg">
+                  <p>bgwn is the philosphy of for a man of rock bottom. </p> <br /> 
+
+                  <p>It is the ethos of creating greatness from nothing. <br /> <br />
+                  It is the collective of artists, creators and agitators who believe <i>nothing</i> can stop them.</p>
+
+                  <p>Founded from the brain and experience of invasive mastermind, bgwn stands for <b>BE GREAT WITH NOTHING</b></p> <br />
+
+                  <p>As a realist, Mr. Mastermind asks: what if you had nothing? What if you had no money, no connections, no resources? What if you were born with nothing and had to create everything from scratch? <br /> <br />
+                  What if the point was to begin without. To enter the voide and become devoid of emotion, struggle, pain and transmute it all into LOVE</p> <br />
+
+                  <p>Mr. Mastermind has found his true greatness in nothing, in boredom, in solidarity. <i>Now get this... WE ARE NOT <br /> <br />
+                  HENRY DAVID THOREAU SUGGESTING YOU LEAVE HOME AND BUILD A SHACK ON YOUR FRIENDS LAWN.</i> Trust me, I tried.</p> <br />
+
+                  <p>BGWN is here as a guiding post, an arrow on the trail, and frame of mind to <u>keep</u> the BACKSTEPPERS, the forward thinkers, the distracted aligned.</p> <br />
+
+                  <h2 className="text-3xl">bgwn records.</h2> <br />
+
+                  <p>We cut records that share experience, emotion and <i>nothing</i>.</p>
+                  <p>What Kenny say... I am not your savior, however I'll share what saved me.</p>
+                </div>
               </div>
             </div>
           </div>
