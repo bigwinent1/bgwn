@@ -216,8 +216,8 @@ Shot on location in various desert environments, these visuals capture the raw b
                 {blogs.map((blog) => (
                   <div key={blog.id} className="bg-black/20 p-6 rounded-lg backdrop-blur-md border border-white/10 shadow-lg">
                     <h3 className="text-2xl font-semibold mb-2">{blog.title}</h3>
-                    <div className="text-sm text-gray-400 mb-4">{blog.date} — {blog.author}</div>
-                    <p className="text-gray-200">{blog.excerpt}</p>
+                    <div className="text-sm text-black mb-4">{blog.date} — {blog.author}</div>
+                    <p className="text-black">{blog.content}</p>
                   </div>
                 ))}
               </div>
@@ -242,10 +242,6 @@ Shot on location in various desert environments, these visuals capture the raw b
               >
                 <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 p-0 transition-transform duration-500 group-hover:scale-[1.02] rounded-md overflow-hidden">
                   <img src="/assets/catch22_cover_art.jpg" alt="CATCH22 cover art" className="w-full h-full object-cover" />
-                  {/* parental advisory removed as requested */}
-                  <div className="absolute bottom-8 right-8 text-white font-bold tracking-[0.3em] text-sm opacity-90">
-                    CATCH22
-                  </div>
                 </div>
                 <h3 className="text-xl font-bold text-black group-hover:text-blue-600 transition-colors">CATCH22</h3>
                 <p className="text-gray-600 text-sm">2024</p>

@@ -57,7 +57,7 @@ const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange }) => {
           })}
         </nav>
 
-        <div className="w-16 text-right text-xs text-gray-400 hidden md:block">bgwn</div>
+        <img src="/assets/bgwn_png3_logo.png" alt="bgwn logo" className="w-16 h-auto hidden md:block" />
       </div>
 
       {showInternalTabs && (
