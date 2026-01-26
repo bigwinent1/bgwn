@@ -44,8 +44,11 @@ export enum TabOption {
   DISTORTED = 'DISTORTED',
   MR_SQUARE = 'Mr. SQUARE (demos)',
   POSER = 'POSER',
+  QUIET = 'QUIET',
+  SIXTY9 = 'Sixty9',
+  KALIDESKOPE = 'KALIDESKOPE',
+  RWYA = 'RWYA',
   TIX = 'TIX',
   INSTRUMENTALS = 'Instrumentals',
-  SUPPORT_ARTISTS = 'Support - Artists',
-  SUPPORT_BUSINESSES = 'Support - Businesses'
+  SUPPORT = 'Support'
 }

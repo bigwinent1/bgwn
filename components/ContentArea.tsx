@@ -20,6 +20,10 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeTab, onTabChange }) => 
     TabOption.DISTORTED,
     TabOption.MR_SQUARE,
     TabOption.POSER,
+    TabOption.QUIET,
+    TabOption.SIXTY9,
+    TabOption.KALIDESKOPE,
+    TabOption.RWYA,
   ];
 
   const blogs: Blog[] = [
@@ -295,6 +299,54 @@ Shot on location in various desert environments, these visuals capture the raw b
                 <p className="text-gray-600 text-sm">Demos • 2024</p>
               </div>
 
+              {/* QUIET Album Card */}
+              <div
+                onClick={() => onTabChange(TabOption.QUIET)}
+                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
+              >
+                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
+                  <img src="/assets/quiet2_compressed.jpg" alt="QUIET cover art" className="w-full h-full object-cover" />
+                </div>
+                <h3 className="text-xl font-bold text-black group-hover:text-gray-600 transition-colors">QUIET</h3>
+                <p className="text-gray-600 text-sm">2024</p>
+              </div>
+
+              {/* Sixty9 Album Card */}
+              <div
+                onClick={() => onTabChange(TabOption.SIXTY9)}
+                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
+              >
+                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
+                  <img src="/assets/sixty9_compressed.jpg" alt="Sixty9 cover art" className="w-full h-full object-cover" />
+                </div>
+                <h3 className="text-xl font-bold text-black group-hover:text-pink-600 transition-colors">Sixty9</h3>
+                <p className="text-gray-600 text-sm">2024</p>
+              </div>
+
+              {/* KALIDESKOPE Album Card */}
+              <div
+                onClick={() => onTabChange(TabOption.KALIDESKOPE)}
+                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
+              >
+                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
+                  <img src="/assets/kalideskope_compressed.jpg" alt="KALIDESKOPE cover art" className="w-full h-full object-cover" />
+                </div>
+                <h3 className="text-xl font-bold text-black group-hover:text-cyan-600 transition-colors">KALIDESKOPE</h3>
+                <p className="text-gray-600 text-sm">2024</p>
+              </div>
+
+              {/* RWYA Album Card */}
+              <div
+                onClick={() => onTabChange(TabOption.RWYA)}
+                className="cursor-pointer group transition-transform duration-300 hover:scale-105"
+              >
+                <div className="relative w-full aspect-square shadow-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-[1.02] overflow-hidden rounded-md">
+                  <img src="/assets/rwya_compressed.jpg" alt="RWYA cover art" className="w-full h-full object-cover" />
+                </div>
+                <h3 className="text-xl font-bold text-black group-hover:text-teal-600 transition-colors">RWYA</h3>
+                <p className="text-gray-600 text-sm">2024</p>
+              </div>
+
               {/* JOVE Album Card */}
               <div onClick={() => onTabChange(TabOption.JOVE)} 
               className="cursor-default group transition-transform duration-300 hover:scale-105">
@@ -372,72 +424,75 @@ Shot on location in various desert environments, these visuals capture the raw b
           </div>
         );
 
-      case TabOption.SUPPORT_ARTISTS:
+      case TabOption.SUPPORT:
         return (
           <div className="p-8 h-full overflow-y-auto">
-            <h2 className="text-3xl font-bold text-black mb-6 border-b border-white/10 pb-4">Support These Artists</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[{
-                name: 'Catch22',
-                desc: 'Experimental Hip-Hop',
-                donate: '#'
-              }, {
-                name: 'ARIZONA',
-                desc: 'Alternative Rock / Indie',
-                donate: '#'
-              }, {
-                name: 'ABOUTIME',
-                desc: 'Lo-Fi Beats',
-                donate: '#'
-              }].map((artist) => (
-                <div key={artist.name} className="bg-black/40 p-6 rounded-lg border border-white/5 flex flex-col">
-                  <div className="flex items-center justify-between mb-4">
-                    <div>
-                      <h3 className="text-xl font-bold text-white">{artist.name}</h3>
-                      <div className="text-sm text-gray-400">{artist.desc}</div>
+            <h2 className="text-3xl font-bold text-black mb-6 border-b border-white/10 pb-4">Support</h2>
+            
+            {/* Support Artists Section */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-bold text-black mb-4">Support These Artists</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[{
+                  name: 'Catch22',
+                  desc: 'Experimental Hip-Hop',
+                  donate: '#'
+                }, {
+                  name: 'ARIZONA',
+                  desc: 'Alternative Rock / Indie',
+                  donate: '#'
+                }, {
+                  name: 'ABOUTIME',
+                  desc: 'Lo-Fi Beats',
+                  donate: '#'
+                }].map((artist) => (
+                  <div key={artist.name} className="bg-black/40 p-6 rounded-lg border border-white/5 flex flex-col">
+                    <div className="flex items-center justify-between mb-4">
+                      <div>
+                        <h3 className="text-xl font-bold text-white">{artist.name}</h3>
+                        <div className="text-sm text-gray-400">{artist.desc}</div>
+                      </div>
+                      <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center text-black font-bold">{artist.name.split('')[0]}</div>
                     </div>
-                    <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center text-black font-bold">{artist.name.split('')[0]}</div>
+                    <p className="text-sm text-white mb-4">You can support this artist by buying merch, streaming, or donating directly.</p>
+                    <div className="mt-auto flex gap-2">
+                      <a href={artist.donate} target="_blank" rel="noreferrer" className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-black rounded-md text-sm font-bold">Donate</a>
+                      <button onClick={() => onTabChange(TabOption.ARTIST)} className="px-4 py-2 bg-white/10 hover:bg-white/20 text-black rounded-md text-sm">View Artist</button>
+                    </div>
                   </div>
-                  <p className="text-sm text-white mb-4">You can support this artist by buying merch, streaming, or donating directly.</p>
-                  <div className="mt-auto flex gap-2">
-                    <a href={artist.donate} target="_blank" rel="noreferrer" className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-black rounded-md text-sm font-bold">Donate</a>
-                    <button onClick={() => onTabChange(TabOption.ARTIST)} className="px-4 py-2 bg-white/10 hover:bg-white/20 text-black rounded-md text-sm">View Artist</button>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        );
 
-      case TabOption.SUPPORT_BUSINESSES:
-        return (
-          <div className="p-8 h-full overflow-y-auto">
-            <h2 className="text-3xl font-bold text-black mb-6 border-b border-white/10 pb-4">Support These Businesses</h2>
-            <div className="space-y-4">
-              {[{
-                name: 'Cornerstone Coffee + Co',
-                city: 'Albany, GA',
-                href: '#'
-              }, {
-                name: 'The Network Coffee Shop',
-                city: 'Valdosta, GA',
-                href: '#'
-              }, {
-                name: 'Maté Factor',
-                city: 'Savannah, GA',
-                href: '#'
-              }].map((biz) => (
-                <div key={biz.name} className="bg-black/40 p-6 rounded-lg border border-white/5 flex items-center justify-between">
-                  <div>
-                    <h3 className="text-lg font-bold text-black">{biz.name}</h3>
-                    <div className="text-sm text-gray-400">{biz.city}</div>
+            {/* Support Businesses Section */}
+            <div>
+              <h3 className="text-2xl font-bold text-black mb-4">Support These Businesses</h3>
+              <div className="space-y-4">
+                {[{
+                  name: 'Cornerstone Coffee + Co',
+                  city: 'Albany, GA',
+                  href: '#'
+                }, {
+                  name: 'The Network Coffee Shop',
+                  city: 'Valdosta, GA',
+                  href: '#'
+                }, {
+                  name: 'Maté Factor',
+                  city: 'Savannah, GA',
+                  href: '#'
+                }].map((biz) => (
+                  <div key={biz.name} className="bg-black/40 p-6 rounded-lg border border-white/5 flex items-center justify-between">
+                    <div>
+                      <h3 className="text-lg font-bold text-black">{biz.name}</h3>
+                      <div className="text-sm text-gray-400">{biz.city}</div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <a href={biz.href} target="_blank" rel="noreferrer" className="px-3 py-2 bg-white text-black rounded font-bold text-sm">Visit</a>
+                      <button className="px-3 py-2 bg-white/10 text-black rounded text-sm">Support</button>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <a href={biz.href} target="_blank" rel="noreferrer" className="px-3 py-2 bg-white text-black rounded font-bold text-sm">Visit</a>
-                    <button className="px-3 py-2 bg-white/10 text-black rounded text-sm">Support</button>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         );
@@ -863,6 +918,54 @@ Shot on location in various desert environments, these visuals capture the raw b
                 <img src="/assets/poserCover_2.jpg" alt="POSER cover 2" className="w-full object-cover rounded-md shadow-md" />
                 <img src="/assets/poser_lyrics_cover.jpg" alt="POSER lyrics cover" className="w-full object-cover rounded-md shadow-md" />
                 <img src="/assets/poser_tracklist_cover.jpg" alt="POSER tracklist cover" className="w-full object-cover rounded-md shadow-md" />
+              </div>
+            </div>
+          </>
+        );
+
+      case TabOption.QUIET:
+        return (
+          <>
+            <div className="flex-grow flex flex-col items-center justify-center p-8">
+              {/* Album Art */}
+              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
+                <img src="/assets/quiet2_compressed.jpg" alt="QUIET cover art" className="w-full h-full object-cover" />
+              </div>
+            </div>
+          </>
+        );
+
+      case TabOption.SIXTY9:
+        return (
+          <>
+            <div className="flex-grow flex flex-col items-center justify-center p-8">
+              {/* Album Art */}
+              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
+                <img src="/assets/sixty9_compressed.jpg" alt="Sixty9 cover art" className="w-full h-full object-cover" />
+              </div>
+            </div>
+          </>
+        );
+
+      case TabOption.KALIDESKOPE:
+        return (
+          <>
+            <div className="flex-grow flex flex-col items-center justify-center p-8">
+              {/* Album Art */}
+              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
+                <img src="/assets/kalideskope_compressed.jpg" alt="KALIDESKOPE cover art" className="w-full h-full object-cover" />
+              </div>
+            </div>
+          </>
+        );
+
+      case TabOption.RWYA:
+        return (
+          <>
+            <div className="flex-grow flex flex-col items-center justify-center p-8">
+              {/* Album Art */}
+              <div className="relative w-full max-w-md aspect-square shadow-2xl flex items-center justify-center mb-12 p-0 group cursor-pointer transition-transform duration-500 hover:scale-[1.01] rounded-md overflow-hidden">
+                <img src="/assets/rwya_compressed.jpg" alt="RWYA cover art" className="w-full h-full object-cover" />
               </div>
             </div>
           </>

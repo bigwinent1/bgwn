@@ -18,6 +18,10 @@ const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange }) => {
     TabOption.DISTORTED,
     TabOption.MR_SQUARE,
     TabOption.POSER,
+    TabOption.QUIET,
+    TabOption.SIXTY9,
+    TabOption.KALIDESKOPE,
+    TabOption.RWYA,
     TabOption.TIX,
   ];
 
@@ -40,8 +44,7 @@ const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange }) => {
             TabOption.ARTIST,
             TabOption.SHOWS,
             TabOption.VISUALS,
-            TabOption.SUPPORT_ARTISTS,
-            TabOption.SUPPORT_BUSINESSES,
+            TabOption.SUPPORT,
           ].map((tab) => {
             const isActive = activeTab === tab || (tab === TabOption.MUSIC && musicTabs.includes(activeTab));
             return (
